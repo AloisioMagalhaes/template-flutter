@@ -1,0 +1,26 @@
+<Project ToolsVersion="15.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">x64</Platform>
+    <ProjectGuid>{A7A1F9E4-7C8D-4E6F-9E2C-7D1A4B5C8F20}</ProjectGuid>
+    <OutputType>AppContainerExe</OutputType>
+    <RootNamespace>TemplateFlutter.UwpShell</RootNamespace>
+    <AssemblyName>TemplateFlutter.UwpShell</AssemblyName>
+    <TargetPlatformVersion>10.0.19041.0</TargetPlatformVersion>
+    <TargetPlatformMinVersion>10.0.17763.0</TargetPlatformMinVersion>
+    <TargetPlatformIdentifier>UAP</TargetPlatformIdentifier>
+    <MinimumVisualStudioVersion>16.0</MinimumVisualStudioVersion>
+    <EnableDefaultApplicationDefinition>False</EnableDefaultApplicationDefinition>
+    <EnableDefaultPageItems>False</EnableDefaultPageItems>
+  </PropertyGroup>
+  <Import Project="$(VSToolsPath)\DotNet\Microsoft.CSharp.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath)\Microsoft\WindowsXaml\v$(VisualStudioVersion)\Microsoft.Windows.UI.Xaml.CSharp.targets" />
+  <ItemGroup>
+    <ApplicationDefinition Include="App.xaml"><Generator>MSBuild:Compile</Generator><SubType>Designer</SubType></ApplicationDefinition>
+    <Page Include="MainPage.xaml"><Generator>MSBuild:Compile</Generator><SubType>Designer</SubType></Page>
+    <Compile Include="App.xaml.cs"><DependentUpon>App.xaml</DependentUpon></Compile>
+    <Compile Include="MainPage.xaml.cs"><DependentUpon>MainPage.xaml</DependentUpon></Compile>
+    <Content Include="Assets\index.html" />
+    <None Include="Package.appxmanifest"><SubType>Designer</SubType></None>
+  </ItemGroup>
+</Project>
