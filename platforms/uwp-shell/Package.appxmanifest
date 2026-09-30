@@ -4,5 +4,5 @@
   <Properties><DisplayName>Template Flutter UWP Spike</DisplayName><PublisherDisplayName>Aloisio Magalhaes</PublisherDisplayName><Description>Experimental UWP WebView shell</Description><Logo>Assets\StoreLogo.png</Logo></Properties>
   <Resources><Resource Language="pt-BR" /></Resources>
   <Dependencies><TargetDeviceFamily Name="Windows.Universal" MinVersion="10.0.17763.0" MaxVersionTested="10.0.26100.0" /></Dependencies>
-  <Applications><Application Id="App" Executable="$targetnametoken$.exe" EntryPoint="TemplateFlutter.UwpShell.App"><uap:VisualElements AppListEntry="none" DisplayName="Template Flutter UWP Spike" Square150x150Logo="Assets\StoreLogo.png" Square44x44Logo="Assets\StoreLogo.png"><uap:DefaultTile Square150x150Logo="Assets\StoreLogo.png" /></uap:VisualElements></Application></Applications>
+  <Applications><Application Id="App" Executable="$targetnametoken$.exe" EntryPoint="TemplateFlutter.UwpShell.App"><uap:VisualElements AppListEntry="none" DisplayName="Template Flutter UWP Spike" BackgroundColor="black" Square150x150Logo="Assets\StoreLogo.png" Square44x44Logo="Assets\StoreLogo.png"><uap:DefaultTile Square150x150Logo="Assets\StoreLogo.png" /></uap:VisualElements></Application></Applications>
 </Package>

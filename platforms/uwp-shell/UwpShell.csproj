@@ -1,7 +1,7 @@
 <Project ToolsVersion="15.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
-    <Platform Condition=" '$(Platform)' == '' ">x86</Platform>
+    <Platform Condition=" '$(Platform)' == '' ">x64</Platform>
     <ProjectGuid>{A7A1F9E4-7C8D-4E6F-9E2C-7D1A4B5C8F20}</ProjectGuid>
     <OutputType>AppContainerExe</OutputType>
     <RootNamespace>TemplateFlutter.UwpShell</RootNamespace>

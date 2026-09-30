@@ -66,5 +66,5 @@
 - Branch: feature/uwp-webview-spike
 - Objetivo: iniciar o shell UWP WebView mínimo da Issue #3.
 - Ações: criar projeto UWP, manifesto, WebView, HTML local e bloqueio de navegação externa.
-- Resultado: scaffold criado; T-UWP-001 em execução.
-- Limitação: MSBuild/.NET UWP e assets finais não estão disponíveis neste ambiente; Xbox não testado.
+- Resultado: scaffold criado; T-UWP-001 permanece planejado até build reproduzível.
+- Limitação: MSBuild/.NET UWP e StoreLogo.png não estão disponíveis neste ambiente; Xbox não testado.

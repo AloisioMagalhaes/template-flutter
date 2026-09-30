@@ -11,7 +11,6 @@ namespace TemplateFlutter.UwpShell
         {
             InitializeComponent();
             View.NavigationStarting += OnNavigationStarting;
-            View.NavigationCompleted += OnNavigationCompleted;
             View.Navigate(new Uri("ms-appx-web:///Assets/index.html"));
         }
 
@@ -20,9 +19,5 @@ namespace TemplateFlutter.UwpShell
             if (e.Uri.Scheme != "ms-appx-web") e.Cancel = true;
         }
 
-        void OnNavigationCompleted(WebView sender, WebViewNavigationCompletedEventArgs e)
-        {
-            if (!e.IsSuccess) View.Navigate(new Uri("ms-appx-web:///Assets/index.html"));
-        }
     }
 }

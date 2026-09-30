@@ -29,3 +29,12 @@
 - Decisão: manter a Issue #12 bloqueada porque as colunas de evidência ainda representam evidência esperada em vários requisitos.
 - Conflitos: literatura não substitui experimento Xbox; CI atual não executa shell UWP nem MSIX UWP.
 - Referência: `docs/architecture/decision-records/ADR-0002-matrix-review-gate.md`.
+
+## DEC-0004
+
+- Data: 2026-09-30
+- Branch: feature/uwp-webview-spike
+- Objetivo: registrar a divergência WebView clássico versus WebView2 encontrada pelos agentes.
+- Decisão: manter o engine atual apenas como experimento comparativo e abrir ADR-0003 antes da integração Flutter Web.
+- Evidência: revisão conjunta do PR #17.
+- Risco: API ou política de Store pode invalidar a arquitetura escolhida.
