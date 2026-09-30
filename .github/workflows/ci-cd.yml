@@ -26,7 +26,6 @@ jobs:
       - run: flutter test test/widget_test.dart
   tdd-red:
     runs-on: windows-2025
-    continue-on-error: true
     steps:
       - uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683
       - name: Flutter
@@ -37,6 +36,7 @@ jobs:
       - run: flutter pub get
       - name: Capture RED evidence
         shell: pwsh
+        continue-on-error: true
         run: flutter test test/tdd_red_gate_test.dart 2>&1 | Tee-Object tdd-red.log
       - uses: actions/upload-artifact@65c4c4a1ddee5b72f698fdd19549f0f0fb45cf08
         if: always()
