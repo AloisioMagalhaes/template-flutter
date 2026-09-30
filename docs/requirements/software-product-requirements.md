@@ -356,6 +356,10 @@ O projeto deve ser pausado ou redirecionado para shell nativo quando:
 
 O desenvolvimento deve seguir TDD e desenvolvimento incremental orientado por risco: escrever o teste da capacidade, implementar o mínimo, medir no ambiente relevante, registrar o resultado e somente então ampliar o escopo. A literatura de WebView será usada para formular controles e testes; a decisão de compatibilidade Xbox dependerá da evidência experimental específica do produto.
 
+## 15.1 Operação autônoma dos agentes
+
+A divisão de trabalho, o contrato de relatório, os limites de autonomia e a consolidação devem seguir [docs/agents/autonomous-workflow.md](../agents/autonomous-workflow.md). Relatórios LLM são entradas de análise e não substituem evidência experimental, revisão humana, teste ou aprovação de release.
+
 ## 16. Referências
 
 - https://doi.org/10.1016/j.jss.2020.110775
