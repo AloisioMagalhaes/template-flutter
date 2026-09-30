@@ -50,3 +50,12 @@
 - Ações: criar executor de rastreabilidade, relatório JSON, log e hashes; publicar artefato no CI.
 - Resultado: testes disponíveis são classificados como executáveis ou planejados/bloqueados.
 - Limitação: vídeo, UWP, Xbox e MSIX UWP continuam dependentes de ambiente real.
+
+## WORK-0006
+
+- Data: 2026-09-30
+- Branch: feature/matrix-review-gate
+- Objetivo: executar revisão conjunta Product Owner, Arquiteto, QA e Segurança.
+- Resultado: gate bloqueado; requisitos possuem fontes e testes planejados, mas não evidências executadas suficientes.
+- Conflito: evidência esperada não equivale a resultado reproduzível.
+- Evidência: ADR-0002, Issue #12 e risco R-008.

@@ -20,3 +20,12 @@
 - Evidência: `docs/governance/documentation-register.md` e validação no workflow.
 - Riscos: diagramas planejados podem ser confundidos com implementação; cada arquivo declara seu estado.
 - Próximo passo: preencher relatórios dos agentes e revisar os diagramas contra o shell real quando implementado.
+
+## DEC-0003
+
+- Data: 2026-09-30
+- Branch: feature/matrix-review-gate
+- Objetivo: revisar conjuntamente a matriz antes de aprová-la.
+- Decisão: manter a Issue #12 bloqueada porque as colunas de evidência ainda representam evidência esperada em vários requisitos.
+- Conflitos: literatura não substitui experimento Xbox; CI atual não executa shell UWP nem MSIX UWP.
+- Referência: `docs/architecture/decision-records/ADR-0002-matrix-review-gate.md`.
