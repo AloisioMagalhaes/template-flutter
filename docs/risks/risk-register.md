@@ -9,3 +9,4 @@
 | R-005 | MSIX aceito no Windows e rejeitado no Xbox | média | crítico | Manifesto, instalação no Xbox e revisão da Store | aberto |
 | R-006 | Falta de evidência acadêmica específica para Xbox | alta | médio | Registrar lacuna e separar literatura transferida de experimento próprio | aberto |
 | R-007 | Divergência entre repositório local e remoto | baixa | alto | Fetch antes/depois e gate de sincronização | controlado |
+| R-008 | Evidência esperada confundida com evidência executada | média | crítico | Gate conjunto, relatório de execução e vínculo de artefato | aberto |
