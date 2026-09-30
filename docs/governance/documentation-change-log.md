@@ -4,6 +4,7 @@
 |---|---|---|---|---|
 | 2026-09-30 | `06fd330` | Protocolo documentation-first e autonomia de agentes | requisitos, agentes | CI |
 | 2026-09-30 | pendente | Baseline C4 e UML 2.x como código | registro, C4, UML | validação CI |
+| 2026-09-30 | pendente | Fundamentação explícita da matriz conforme ABNT | matriz de rastreabilidade | revisão CI |
 
 ## Protocolo
 

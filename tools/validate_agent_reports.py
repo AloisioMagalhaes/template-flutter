@@ -15,8 +15,12 @@ required = [
     "docs/architecture/uml/sequence-webview.md",
     "docs/architecture/uml/state-lifecycle.md",
     "docs/architecture/uml/deployment.md",
+    "docs/tests/test-register.md",
 ]
 e += [f"documento ausente: {x}" for x in required if not Path(x).is_file()]
+ids = ["T-UWP-001", "T-WEB-001", "T-OFF-001", "T-GAME-001", "T-ACC-001", "T-SEC-001", "T-SEC-002", "T-STORE-001", "T-PERF-001", "T-SEC-003", "T-PRIV-001", "T-PKG-001", "T-CI-001", "T-CI-002", "T-CI-003"]
+t = Path("docs/tests/test-register.md").read_text(encoding="utf-8") if Path("docs/tests/test-register.md").is_file() else ""
+e += [f"teste sem registro: {x}" for x in ids if x not in t]
 e += ["registro sem protocolo de atualização" for x in [0] if "mesma pull request" not in Path("docs/governance/documentation-register.md").read_text(encoding="utf-8")]
 for p in sorted(r.glob("*.md")):
     if p.name == "TEMPLATE.md":
