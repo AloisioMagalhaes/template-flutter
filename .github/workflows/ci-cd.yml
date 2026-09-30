@@ -24,6 +24,8 @@ jobs:
       - run: dart format --output=none --set-exit-if-changed .
       - run: flutter analyze
       - run: flutter test test/widget_test.dart
+      - name: Validate agent reports
+        run: python tools/validate_agent_reports.py
   tdd-red:
     runs-on: windows-2025
     steps:
