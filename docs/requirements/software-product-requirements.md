@@ -393,3 +393,47 @@ TIWARI, Abhishek; PRAKASH, Jyoti; HAMMER, Christian. Demand-driven information f
 FLUTTER. Build and release a web app. [S. l.]: Flutter, [s.d.]. Disponível em: https://docs.flutter.dev/deployment/web. Acesso em: 30 set. 2026.
 
 FLUTTER. Building Windows apps with Flutter. [S. l.]: Flutter, [s.d.]. Disponível em: https://docs.flutter.dev/platform-integration/windows/building. Acesso em: 30 set. 2026.
+
+## 18. Validação por revisão de literatura
+
+### Método
+
+Foi realizada busca temática nas plataformas SciSpace, Consensus e Scite, complementada por documentação oficial e DOI ou URL da fonte primária. A literatura foi usada para verificar se cada grupo de requisitos possui fundamento, identificar limitações e transformar achados em testes. A maior parte dos estudos de WebView usa Android e a maior parte dos estudos de TV usa plataformas conectadas genéricas; portanto, a validade externa para Xbox é limitada e exige experimento próprio.
+
+### Matriz de validação
+
+| Tópico dos requisitos | Achado da literatura | Requisitos sustentados | Situação |
+|---|---|---|---|
+| Shell UWP/WebView | A documentação Microsoft indica `WebView` UWP para Xbox; Flutter atual documenta Web e Windows, mas não shell UWP/Xbox oficial (Microsoft, [s.d.]; Flutter, [s.d.]; Flutter, 2023). | RF-001, RF-002, RNF-003, RNF-007 | Suportado tecnicamente; compatibilidade Xbox ainda não demonstrada |
+| Flutter Web versus nativo | Estudo comparativo encontrou maior tempo de carregamento e reconstrução no Flutter Web que no ambiente nativo (Piskor e Badurowicz, 2023). | RNF-001, CI-002, V-006 | Suportado; requer benchmark no hardware-alvo |
+| JavaScript/WebAssembly | A literatura sobre Web aponta que desempenho depende do runtime, carga e caminho de execução; não foi localizada evidência suficiente específica para Flutter Wasm no WebView Xbox. | RNF-001, RF-002, V-006 | Lacuna; JavaScript deve ser fallback até medição |
+| WebView híbrido | Estudos identificam risco na comunicação bidirecional entre Web e nativo, incluindo fluxos de dados sensíveis, interfaces abusáveis e injeção (Tiwari et al., 2020; Rizzo, Cavallaro e Kinder, 2017; Tiwari, Prakash e Hammer, 2023). | RF-010, RF-011, RF-012, RNF-004, modelo de ameaças | Fortemente suportado; controles são obrigatórios |
+| Gamepad e navegação | Microsoft recomenda navegação XY, foco visual, foco engajado e experiência de 10 pés; WebView pode exigir mouse mode (Microsoft, [s.d.]). | RF-006, RF-007, RF-008, RF-009, V-005 | Suportado oficialmente; precisa validação em Xbox |
+| Acessibilidade TV | Estudos mostram desafios específicos em Web TV e que conformidade automática não garante conclusão de tarefas por usuários (Fernandes et al., 2013; Costa e Duarte, 2017). | RNF-006, RF-006, RF-007, V-005 | Suportado; exige teste baseado em tarefas |
+| Desempenho TV | Estudos destacam limitações de hardware e comportamento de visualização diferentes da Web convencional (Lee e Zhong, 2005; Alam, Khusro e Khan, 2019). | RNF-001, RNF-002, V-006 | Suportado; limites devem ser definidos experimentalmente |
+| Offline e cache | Flutter documenta build Web e geração de assets, mas a literatura consultada não valida o ciclo de vida offline no WebView Xbox. | RF-002, RF-003, RF-004, R6, V-008 | Parcial; validar conteúdo local, cache e retomada |
+| Segurança de origem e downloads | Literatura de WebView demonstra riscos de origem, ponte e conteúdo não confiável; política Microsoft restringe navegação, download e cópia no Xbox (Tiwari et al., 2020; Microsoft, [s.d.]). | RF-012, RF-013, RNF-004, RNF-005, CI-004 | Suportado; validar contra política vigente |
+| Privacidade | Estudos sobre híbridos mostram fluxos de dados entre Web e nativo; a literatura não substitui inventário e avaliação de impacto específica do produto (Tiwari et al., 2020; Tiwari, Prakash e Hammer, 2023). | RF-015, RNF-005, modelo de ameaças | Suportado como risco; controles do produto ainda devem ser implementados |
+| MSIX e Store | A documentação Microsoft define requisitos de pacote, manifesto e família de dispositivo; a literatura acadêmica não determina aceitação da Store. | RF-014, RNF-007, CI-003, CI-007, V-007 | Fonte oficial necessária; certificação continua gate externo |
+| TDD | Estudos empíricos encontram benefícios em alguns contextos, mas meta-análise mostra que resultado depende de tarefa, experiência e ambiente (Santos et al., 2021; Tosun, Dieste e Fucci, 2017; Bakhtiary, Gandomani e Salajegheh, 2020). | V-001, V-002, CI-001, seção 15 | Suportado com ressalvas; medir qualidade e custo no projeto |
+| CI/CD e DevSecOps | A literatura encontrada não fornece evidência suficiente específica deste produto para definir limiares de segurança ou desempenho; práticas SSDF e pipeline devem ser tratadas como controles de engenharia e avaliadas por evidência interna. | CI-001 a CI-007, RNF-008, RNF-009 | Requisito metodológico; validar eficácia por métricas do pipeline |
+
+### Síntese da revisão
+
+1. A literatura sustenta a decisão de tratar a ponte WebView-nativa como superfície de ataque e não como simples integração técnica (Tiwari et al., 2020; Rizzo, Cavallaro e Kinder, 2017).
+2. A literatura sustenta testes de acessibilidade orientados a tarefas, pois auditoria automática isolada não representa a experiência de TV (Fernandes et al., 2013; Costa e Duarte, 2017).
+3. A literatura sustenta benchmarks comparativos, pois Flutter Web pode apresentar custos superiores ao ambiente nativo em carregamento e reconstrução (Piskor e Badurowicz, 2023).
+4. A literatura não prova que o mesmo Flutter Web MSIX funcionará no Xbox; essa é a principal lacuna e deve ser respondida por protótipo, teste em dispositivo e certificação.
+5. TDD deve ser adotado como hipótese de melhoria de qualidade, não como garantia; o projeto deve acompanhar defeitos, cobertura, tempo de desenvolvimento e retrabalho (Santos et al., 2021; Tosun, Dieste e Fucci, 2017).
+
+### Novas referências em formato ABNT
+
+ALAM, Iftikhar; KHUSRO, Shah; KHAN, Mumtaz Ali. Usability barriers in smart TV user interfaces: a review and recommendations. In: FRONTIERS OF INFORMATION TECHNOLOGY, 2019. Anais [...]. 2019. DOI: 10.1109/FIT47737.2019.00069. Disponível em: https://doi.org/10.1109/FIT47737.2019.00069. Acesso em: 30 set. 2026.
+
+BAKHTIARY, Vahid; GANDOMANI, Taghi Javdani; SALAJEGHEH, Afshin. The effectiveness of test-driven development approach on software projects: a multi-case study. Bulletin of Electrical Engineering and Informatics, v. 9, n. 5, 2020. DOI: 10.11591/eei.v9i5.2533. Disponível em: https://doi.org/10.11591/eei.v9i5.2533. Acesso em: 30 set. 2026.
+
+PISKOR, Juliusz; BADUROWICZ, Marcin. Performance comparison of Flutter platform GUI in web and native environments. Journal of Computer Sciences Institute, 2023. DOI: 10.35784/jcsi.3677. Disponível em: https://doi.org/10.35784/jcsi.3677. Acesso em: 30 set. 2026.
+
+SANTOS, Adrián et al. A family of experiments on test-driven development. Empirical Software Engineering, v. 26, 2021. DOI: 10.1007/S10664-020-09895-8. Disponível em: https://doi.org/10.1007/S10664-020-09895-8. Acesso em: 30 set. 2026.
+
+TOSUN, Ayse; DIESTE, Oscar; FUCCI, Davide. An industry experiment on the effects of test-driven development on external quality and productivity. Empirical Software Engineering, 2017. DOI: 10.1007/S10664-016-9490-0. Disponível em: https://doi.org/10.1007/S10664-016-9490-0. Acesso em: 30 set. 2026.

@@ -250,3 +250,25 @@ Grande parte da literatura acadêmica encontrada estuda Android WebView ou TV co
 - Resultados de Consensus devem ser conferidos no registro completo antes da citação.
 - Resultados de Scite devem registrar DOI e, quando usado, se a citação foi supporting, contrasting ou mentioning.
 - Nenhuma conclusão sobre aceitação na Store deve ser baseada somente em artigo acadêmico.
+
+## Revisão acadêmica adicional vinculada aos requisitos
+
+A literatura adicional sustenta a necessidade de medir o custo do Flutter Web: em comparação no mesmo dispositivo, o Flutter Web apresentou tempos maiores de carregamento e reconstrução que o ambiente nativo (Piskor e Badurowicz, 2023). Esse achado foi convertido nos requisitos RNF-001, CI-002 e V-006 do documento de requisitos.
+
+Estudos empíricos e uma família de experimentos sobre TDD indicam efeitos dependentes da tarefa, experiência e ambiente; TDD não deve ser tratado como garantia universal de qualidade (Santos et al., 2021; Tosun, Dieste e Fucci, 2017; Bakhtiary, Gandomani e Salajegheh, 2020). Esse achado foi convertido em V-001, CI-001 e métricas de defeitos, cobertura, tempo e retrabalho.
+
+Os estudos sobre acessibilidade de Web TV reforçam que avaliação automática não basta para confirmar que pessoas conseguem completar tarefas em interfaces de televisão (Fernandes et al., 2013; Costa e Duarte, 2017). Esse achado foi convertido em testes de gamepad, foco e tarefas reais.
+
+O resultado negativo da revisão é relevante: não foi encontrada evidência acadêmica suficiente que comprove Flutter Web Wasm ou JavaScript executando no `Windows.UI.Xaml.Controls.WebView` de Xbox atual. Essa lacuna mantém a compatibilidade como hipótese e impede declarar suporte antes do experimento no hardware real.
+
+### Referências ABNT adicionadas
+
+ALAM, Iftikhar; KHUSRO, Shah; KHAN, Mumtaz Ali. Usability barriers in smart TV user interfaces: a review and recommendations. In: FRONTIERS OF INFORMATION TECHNOLOGY, 2019. Anais [...]. 2019. DOI: 10.1109/FIT47737.2019.00069. Disponível em: https://doi.org/10.1109/FIT47737.2019.00069. Acesso em: 30 set. 2026.
+
+BAKHTIARY, Vahid; GANDOMANI, Taghi Javdani; SALAJEGHEH, Afshin. The effectiveness of test-driven development approach on software projects: a multi-case study. Bulletin of Electrical Engineering and Informatics, v. 9, n. 5, 2020. DOI: 10.11591/eei.v9i5.2533. Disponível em: https://doi.org/10.11591/eei.v9i5.2533. Acesso em: 30 set. 2026.
+
+PISKOR, Juliusz; BADUROWICZ, Marcin. Performance comparison of Flutter platform GUI in web and native environments. Journal of Computer Sciences Institute, 2023. DOI: 10.35784/jcsi.3677. Disponível em: https://doi.org/10.35784/jcsi.3677. Acesso em: 30 set. 2026.
+
+SANTOS, Adrián et al. A family of experiments on test-driven development. Empirical Software Engineering, v. 26, 2021. DOI: 10.1007/S10664-020-09895-8. Disponível em: https://doi.org/10.1007/S10664-020-09895-8. Acesso em: 30 set. 2026.
+
+TOSUN, Ayse; DIESTE, Oscar; FUCCI, Davide. An industry experiment on the effects of test-driven development on external quality and productivity. Empirical Software Engineering, 2017. DOI: 10.1007/S10664-016-9490-0. Disponível em: https://doi.org/10.1007/S10664-016-9490-0. Acesso em: 30 set. 2026.
