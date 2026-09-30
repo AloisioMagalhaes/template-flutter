@@ -13,3 +13,13 @@
 - Sub-issues de pesquisa: #8 a #12.
 - Artefatos: `docs/traceability/requirements-risk-tests.md` e `docs/research/research-log.md`.
 - Próximo passo: revisar o teste RED e decidir a implementação do shell UWP no próximo ciclo.
+
+## WORK-0002
+
+- Data: 2026-09-30
+- Branch: feature/research-traceability
+- Objetivo: implementar documentation-first com C4 e UML 2.x.
+- Ações: criar registro documental, log de mudanças, diagramas como código e gates de validação.
+- Resultado: documentação obrigatória e validação de links integrada ao CI.
+- Evidência: commit desta execução e workflow `ci-cd`.
+- Limitação: shell UWP e compatibilidade Xbox continuam não implementados.

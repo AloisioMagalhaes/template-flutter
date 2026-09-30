@@ -26,6 +26,20 @@ jobs:
       - run: flutter test test/widget_test.dart
       - name: Validate agent reports
         run: python tools/validate_agent_reports.py
+      - name: Validate documentation links and diagrams
+        shell: pwsh
+        run: |
+          $files = Get-ChildItem docs -Recurse -Filter *.md
+          foreach ($file in $files) {
+            $text = Get-Content $file.FullName -Raw
+            if ($text -match '\]\((\.\.?/)') {
+              $links = [regex]::Matches($text, '\]\((\.\.?/[^)#]+)')
+              foreach ($link in $links) {
+                $target = Join-Path $file.DirectoryName $link.Groups[1].Value
+                if (-not (Test-Path $target)) { throw "Link documental inválido: $($file.FullName) -> $target" }
+              }
+            }
+          }
   tdd-red:
     runs-on: windows-2025
     steps:
