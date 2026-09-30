@@ -4,7 +4,7 @@
 
 | ID | Tipo | Caso | Método | Evidência | Estado | Bloqueio |
 |---|---|---|---|---|---|---|
-| T-UWP-001 | integração | shell UWP hospeda WebView local | build e execução em Windows | log, versão e captura | planejado | shell UWP inexistente |
+| T-UWP-001 | integração | shell UWP hospeda WebView local | build e execução em Windows | log, versão e captura | em execução | Visual Studio/Windows SDK UWP necessário |
 | T-WEB-001 | integração | Flutter Web carrega do pacote | inspeção do bundle e hash | hash e log | planejado | shell UWP inexistente |
 | T-OFF-001 | sistema | inicializa sem rede | bloquear rede e executar fluxo | log de execução | planejado | shell UWP inexistente |
 | T-GAME-001 | aceitação | tarefa crítica por gamepad | matriz de controles em hardware | matriz e vídeo | planejado | Xbox real necessário |

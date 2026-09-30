@@ -59,3 +59,12 @@
 - Resultado: gate bloqueado; requisitos possuem fontes e testes planejados, mas não evidências executadas suficientes.
 - Conflito: evidência esperada não equivale a resultado reproduzível.
 - Evidência: ADR-0002, Issue #12 e risco R-008.
+
+## WORK-0007
+
+- Data: 2026-09-30
+- Branch: feature/uwp-webview-spike
+- Objetivo: iniciar o shell UWP WebView mínimo da Issue #3.
+- Ações: criar projeto UWP, manifesto, WebView, HTML local e bloqueio de navegação externa.
+- Resultado: scaffold criado; T-UWP-001 em execução.
+- Limitação: MSBuild/.NET UWP e assets finais não estão disponíveis neste ambiente; Xbox não testado.
