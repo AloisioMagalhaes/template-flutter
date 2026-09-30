@@ -1,5 +1,7 @@
 # Documento de Requisitos de Software e Produto
 
+> As citações seguem a ABNT NBR 10520:2023 e as referências seguem a ABNT NBR 6023:2018. A política vinculante está em [../knowledge/abnt-citation-policy.md](../knowledge/abnt-citation-policy.md).
+
 ## 1. Identificação
 
 - Produto: aplicativo Flutter Web hospedado em UWP WebView
@@ -12,7 +14,7 @@
 
 ## 2. Objetivo do produto
 
-Demonstrar, por meio de evidência experimental reproduzível, se um aplicativo Flutter Web empacotado localmente em um shell UWP com `Windows.UI.Xaml.Controls.WebView` pode ser instalado, executado e utilizado em Windows e Xbox com desempenho, segurança, privacidade, acessibilidade e navegação por controle suficientes para uma futura certificação da Microsoft Store.
+Demonstrar, por meio de evidência experimental reproduzível, se um aplicativo Flutter Web empacotado localmente em um shell UWP com `Windows.UI.Xaml.Controls.WebView` pode ser instalado, executado e utilizado em Windows e Xbox com desempenho, segurança, privacidade, acessibilidade e navegação por controle suficientes para uma futura certificação da Microsoft Store. A escolha do WebView UWP é apoiada pela documentação da Microsoft para Xbox (Microsoft, [s.d.-a]), enquanto os requisitos de segurança da ponte decorrem de estudos de WebView híbrido (Tiwari et al., 2020; Rizzo, Cavallaro e Kinder, 2017).
 
 O produto não deve declarar compatibilidade Xbox até que exista evidência de execução em dispositivo Xbox real e revisão dos requisitos da Store.
 
@@ -55,7 +57,7 @@ O produto não deve declarar compatibilidade Xbox até que exista evidência de 
 
 ## 5. Base científica e normativa
 
-Os estudos acadêmicos usados abaixo investigam principalmente WebView móvel ou aplicações Web para TV. Eles fundamentam hipóteses de risco e desenho de testes, mas não substituem ensaio no Xbox.
+Os estudos acadêmicos usados abaixo investigam principalmente WebView móvel ou aplicações Web para TV. Eles fundamentam hipóteses de risco e desenho de testes, mas não substituem ensaio no Xbox (Fernandes et al., 2013; Costa e Duarte, 2017; Lee e Zhong, 2005).
 
 - Tiwari et al. (2020), *A Large Scale Analysis of Android-Web Hybridization*, DOI `10.1016/j.jss.2020.110775`: fundamenta controle de fluxos de dados e risco da comunicação WebView-nativa.
 - Rizzo, Cavallaro e Kinder (2017), *BabelView*, arXiv `1709.05690`: fundamenta testes contra injeção e abuso de interfaces JavaScript.
@@ -369,3 +371,25 @@ O desenvolvimento deve seguir TDD e desenvolvimento incremental orientado por ri
 - https://learn.microsoft.com/en-us/windows/apps/publish/store-policy-archive/store-policy-7-16-1
 - https://docs.flutter.dev/deployment/web
 - https://docs.flutter.dev/platform-integration/windows/building
+
+## 17. Referências em formato ABNT
+
+COSTA, Daniel; DUARTE, Carlos. Visually impaired people and the emerging connected TV: a comparative study of TV and Web applications' accessibility. Universal Access in the Information Society, 2017. DOI: 10.1007/S10209-016-0451-6. Disponível em: https://doi.org/10.1007/S10209-016-0451-6. Acesso em: 30 set. 2026.
+
+FERNANDES, Nádia et al. Evaluating the accessibility of adaptive TV based Web applications. 2013. DOI: 10.1007/978-1-4471-5082-4_9. Disponível em: https://doi.org/10.1007/978-1-4471-5082-4_9. Acesso em: 30 set. 2026.
+
+LEE, Meng-Huang; ZHONG, He-Rong. Design considerations for web-based interactive TV services. International Conference on Web Engineering, 2005. DOI: 10.1007/11531371_75. Disponível em: https://doi.org/10.1007/11531371_75. Acesso em: 30 set. 2026.
+
+MICROSOFT. Gamepad and remote control interactions. [S. l.]: Microsoft Learn, [s.d.]. Disponível em: https://learn.microsoft.com/en-us/windows/apps/design/input/gamepad-and-remote-interactions. Acesso em: 30 set. 2026.
+
+MICROSOFT. WebView class. [S. l.]: Microsoft Learn, [s.d.]. Disponível em: https://learn.microsoft.com/en-us/uwp/api/windows.ui.xaml.controls.webview. Acesso em: 30 set. 2026.
+
+RIZZO, Claudio; CAVALLARO, Lorenzo; KINDER, Johannes. BabelView: evaluating the impact of code injection attacks in mobile WebViews. arXiv, 2017. Disponível em: https://arxiv.org/abs/1709.05690. Acesso em: 30 set. 2026.
+
+TIWARI, Abhishek et al. A large scale analysis of Android-Web hybridization. Journal of Systems and Software, v. 170, 110775, 2020. DOI: 10.1016/j.jss.2020.110775. Disponível em: https://doi.org/10.1016/j.jss.2020.110775. Acesso em: 30 set. 2026.
+
+TIWARI, Abhishek; PRAKASH, Jyoti; HAMMER, Christian. Demand-driven information flow analysis of WebView in Android hybrid apps. In: IEEE INTERNATIONAL SYMPOSIUM ON SOFTWARE RELIABILITY ENGINEERING, 34., 2023. Anais [...]. 2023. p. 415-426. Disponível em: https://consensus.app/papers/demanddriven-information-flow-analysis-of-webview-in-tiwari-prakash/0e2682f2b4b45de6b72ef97a4fab3528/. Acesso em: 30 set. 2026.
+
+FLUTTER. Build and release a web app. [S. l.]: Flutter, [s.d.]. Disponível em: https://docs.flutter.dev/deployment/web. Acesso em: 30 set. 2026.
+
+FLUTTER. Building Windows apps with Flutter. [S. l.]: Flutter, [s.d.]. Disponível em: https://docs.flutter.dev/platform-integration/windows/building. Acesso em: 30 set. 2026.
