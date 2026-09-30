@@ -1,0 +1,12 @@
+{
+  "contract": "docs/requirements/software-product-requirements.md",
+  "report_template": "docs/agents/reports/TEMPLATE.md",
+  "roles": [
+    {"role":"Product Owner / Requisitos","thread":"01a0f33b-73f5-7b71-86e6-58bd2015e449","issue":1,"status":"assigned"},
+    {"role":"Arquiteto Flutter/UWP/Xbox","thread":"01a0f33b-7d30-7031-9264-838c422e2787","issue":3,"status":"assigned"},
+    {"role":"Segurança, Privacidade e Zero Trust","thread":"01a0f33b-971d-7940-ab43-346e7221514a","issue":6,"status":"assigned"},
+    {"role":"QA, TDD e Acessibilidade","thread":"01a0f33b-a2c1-7f51-8d1c-295706255d0c","issue":7,"status":"assigned"},
+    {"role":"DevSecOps e Release","thread":"01a0f33b-ad7d-76a2-972d-884b3c38965a","issue":7,"status":"assigned"}
+  ],
+  "merge_policy": "human_review_required"
+}

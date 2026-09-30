@@ -1,0 +1,28 @@
+name: Defeito
+description: Registrar defeito reproduzível
+title: "[BUG] "
+body:
+  - type: input
+    id: teste
+    attributes:
+      label: ID do teste
+    validations:
+      required: true
+  - type: textarea
+    id: reproducao
+    attributes:
+      label: Reprodução
+    validations:
+      required: true
+  - type: textarea
+    id: esperado
+    attributes:
+      label: Resultado esperado
+    validations:
+      required: true
+  - type: textarea
+    id: observado
+    attributes:
+      label: Resultado observado
+    validations:
+      required: true
