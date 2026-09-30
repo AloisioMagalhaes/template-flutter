@@ -23,3 +23,12 @@
 - Resultado: documentação obrigatória e validação de links integrada ao CI.
 - Evidência: commit desta execução e workflow `ci-cd`.
 - Limitação: shell UWP e compatibilidade Xbox continuam não implementados.
+
+## WORK-0003
+
+- Data: 2026-09-30
+- Branch: feature/traceability-abnt
+- Objetivo: corrigir fundamentação explícita da matriz conforme política ABNT.
+- Ações: adicionar coluna de fundamentação, citações autor-data, distinção entre fonte acadêmica, oficial, normativa e inferência, referências ABNT e limitações.
+- Resultado: matriz apta para revisão; estados permanecem `planejado`.
+- Evidência: pull request desta branch.
