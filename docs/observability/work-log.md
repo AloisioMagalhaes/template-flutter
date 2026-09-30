@@ -41,3 +41,12 @@
 - Ações: criar `docs/tests/test-register.md` e validar IDs automaticamente no CI.
 - Resultado: todos os IDs possuem especificação e estado explícito; nenhum teste de Xbox foi declarado executado.
 - Evidência: workflow CI e registro de testes.
+
+## WORK-0005
+
+- Data: 2026-09-30
+- Branch: feature/traceability-abnt
+- Objetivo: gerar evidências automatizadas sem simular hardware.
+- Ações: criar executor de rastreabilidade, relatório JSON, log e hashes; publicar artefato no CI.
+- Resultado: testes disponíveis são classificados como executáveis ou planejados/bloqueados.
+- Limitação: vídeo, UWP, Xbox e MSIX UWP continuam dependentes de ambiente real.

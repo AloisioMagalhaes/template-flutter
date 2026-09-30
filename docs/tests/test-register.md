@@ -20,6 +20,10 @@
 | T-CI-002 | segurança CI | segredos não chegam a forks | revisão de permissões e logs | auditoria | parcialmente executado | revisão de configuração |
 | T-CI-003 | release | release exige aprovação e artefato | revisão de ambiente protegido | aprovação e hash | planejado | ambiente de release |
 
+## Evidência automatizada
+
+O executor `tools/run_traceability_tests.py` gera `artifacts/traceability/report.json` e `artifacts/traceability/traceability.log`. O workflow publica esses arquivos como `traceability-evidence`. `blocked` não significa aprovado; indica dependência de shell, hardware, ambiente protegido ou execução manual.
+
 ## Critério de transição
 
 `planejado` -> `em execução` exige implementação e ambiente definido. `em execução` -> `aprovado` exige evidência reproduzível, resultado, versão, data e vínculo com commit ou PR. Falha cria risco ou issue; não é convertida em aprovação.
