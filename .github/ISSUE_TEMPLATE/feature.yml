@@ -1,0 +1,32 @@
+name: Feature ou requisito
+description: Registrar requisito implementável com TDD
+title: "[REQ] "
+body:
+  - type: input
+    id: requisito
+    attributes:
+      label: ID do requisito
+    validations:
+      required: true
+  - type: textarea
+    id: objetivo
+    attributes:
+      label: Objetivo
+    validations:
+      required: true
+  - type: textarea
+    id: teste
+    attributes:
+      label: Teste RED inicial
+    validations:
+      required: true
+  - type: textarea
+    id: aceitacao
+    attributes:
+      label: Critérios de aceitação
+    validations:
+      required: true
+  - type: textarea
+    id: referencias
+    attributes:
+      label: Referências ABNT
