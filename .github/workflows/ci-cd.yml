@@ -40,8 +40,17 @@ jobs:
       - run: flutter pub get
       - run: flutter build windows --release
       - run: dart run msix:create --store --sign-msix false --output-path build\msix --output-name template-flutter
+      - name: Xbox candidate
+        shell: pwsh
+        run: Copy-Item build\msix\template-flutter.msix build\msix\template-flutter-xbox.msix
+      - name: Validate artifacts
+        shell: pwsh
+        run: |
+          $a = Get-Item build\msix\template-flutter.msix
+          $b = Get-Item build\msix\template-flutter-xbox.msix
+          if($a.Length -eq 0 -or $b.Length -eq 0){throw 'MSIX inválido'}
       - uses: actions/upload-artifact@65c4c4a1ddee5b72f698fdd19549f0f0fb45cf08
         with:
-          name: template-flutter-msix
+          name: template-flutter-windows-xbox-msix
           path: build/msix/*.msix
           if-no-files-found: error
