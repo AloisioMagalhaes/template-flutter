@@ -32,3 +32,12 @@
 - Ações: adicionar coluna de fundamentação, citações autor-data, distinção entre fonte acadêmica, oficial, normativa e inferência, referências ABNT e limitações.
 - Resultado: matriz apta para revisão; estados permanecem `planejado`.
 - Evidência: pull request desta branch.
+
+## WORK-0004
+
+- Data: 2026-09-30
+- Branch: feature/traceability-abnt
+- Objetivo: registrar todos os casos de teste citados na matriz.
+- Ações: criar `docs/tests/test-register.md` e validar IDs automaticamente no CI.
+- Resultado: todos os IDs possuem especificação e estado explícito; nenhum teste de Xbox foi declarado executado.
+- Evidência: workflow CI e registro de testes.
