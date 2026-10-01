@@ -7,7 +7,7 @@ O shell carrega `ms-appx-web:///Assets/index.html` e cancela navegação que nã
 ## Validação pendente
 
 - compilar com Visual Studio e Windows SDK UWP;
-- fornecer os assets gráficos exigidos pelo manifesto;
+- validar os assets gráficos exigidos pelo manifesto;
 - instalar e executar em Windows compatível;
 - testar em Xbox Developer Mode;
 - anexar logs, versão, hash e evidência de execução.
