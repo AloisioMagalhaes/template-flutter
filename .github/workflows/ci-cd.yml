@@ -100,6 +100,13 @@ jobs:
     steps:
       - uses: actions/checkout@fbc6f3992d24b796d5a048ff273f7fcc4a7b6c09
       - uses: microsoft/setup-msbuild@30375c66a4eea26614e0d39710365f22f8b0af57
+      - name: Install .NET Framework targeting pack
+        shell: pwsh
+        run: |
+          $v = "${env:ProgramFiles(x86)}\Microsoft Visual Studio\Installer\vswhere.exe"
+          $p = & $v -latest -products * -property installationPath
+          $i = Join-Path ${env:ProgramFiles(x86)} "Microsoft Visual Studio\Installer\vs_installer.exe"
+          & $i modify --installPath $p --add Microsoft.Net.Component.4.8.SDK --add Microsoft.Net.Component.4.8.TargetingPack --quiet --norestart --wait
       - name: Build UWP shell
         shell: pwsh
         run: |
