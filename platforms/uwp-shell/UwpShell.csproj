@@ -9,7 +9,7 @@
     <TargetPlatformVersion>10.0.19041.0</TargetPlatformVersion>
     <TargetPlatformMinVersion>10.0.17763.0</TargetPlatformMinVersion>
     <TargetPlatformIdentifier>UAP</TargetPlatformIdentifier>
-    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
     <MinimumVisualStudioVersion>16.0</MinimumVisualStudioVersion>
     <EnableDefaultApplicationDefinition>False</EnableDefaultApplicationDefinition>
     <EnableDefaultPageItems>False</EnableDefaultPageItems>
