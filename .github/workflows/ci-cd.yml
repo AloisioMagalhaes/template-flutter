@@ -14,7 +14,7 @@ jobs:
   test:
     runs-on: windows-2025
     steps:
-      - uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683
+      - uses: actions/checkout@fbc6f3992d24b796d5a048ff273f7fcc4a7b6c09
       - name: Flutter
         shell: pwsh
         run: |
@@ -42,14 +42,14 @@ jobs:
           }
       - name: Run traceability evidence
         run: python tools/run_traceability_tests.py
-      - uses: actions/upload-artifact@65c4c4a1ddee5b72f698fdd19549f0f0fb45cf08
+      - uses: actions/upload-artifact@330a01c490aca151604b8cf639adc76d48f6c5d4
         with:
           name: traceability-evidence
           path: artifacts/traceability
   tdd-red:
     runs-on: windows-2025
     steps:
-      - uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683
+      - uses: actions/checkout@fbc6f3992d24b796d5a048ff273f7fcc4a7b6c09
       - name: Flutter
         shell: pwsh
         run: |
@@ -60,7 +60,7 @@ jobs:
         shell: pwsh
         continue-on-error: true
         run: flutter test test/tdd_red_gate_test.dart 2>&1 | Tee-Object tdd-red.log
-      - uses: actions/upload-artifact@65c4c4a1ddee5b72f698fdd19549f0f0fb45cf08
+      - uses: actions/upload-artifact@330a01c490aca151604b8cf639adc76d48f6c5d4
         if: always()
         with:
           name: tdd-red-evidence
@@ -72,7 +72,7 @@ jobs:
       contents: read
       actions: write
     steps:
-      - uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683
+      - uses: actions/checkout@fbc6f3992d24b796d5a048ff273f7fcc4a7b6c09
       - name: Flutter
         shell: pwsh
         run: |
@@ -87,7 +87,7 @@ jobs:
         run: |
           $a = Get-Item build\msix\template-flutter.msix
           if($a.Length -eq 0){throw 'MSIX inválido'}
-      - uses: actions/upload-artifact@65c4c4a1ddee5b72f698fdd19549f0f0fb45cf08
+      - uses: actions/upload-artifact@330a01c490aca151604b8cf639adc76d48f6c5d4
         with:
           name: template-flutter-windows-msix
           path: build/msix/template-flutter.msix
@@ -98,8 +98,8 @@ jobs:
     permissions:
       contents: read
     steps:
-      - uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683
-      - uses: microsoft/setup-msbuild@6fb02220983dee41ce7ae257b6f4d8f9bf5ed4ce
+      - uses: actions/checkout@fbc6f3992d24b796d5a048ff273f7fcc4a7b6c09
+      - uses: microsoft/setup-msbuild@30375c66a4eea26614e0d39710365f22f8b0af57
       - name: Build UWP shell
         shell: pwsh
         run: |
@@ -110,7 +110,7 @@ jobs:
         run: |
           $a = Get-ChildItem -Recurse -Filter *.appx | Select-Object -First 1
           if (-not $a -or $a.Length -eq 0) { throw 'UWP MSIX inválido' }
-      - uses: actions/upload-artifact@65c4c4a1ddee5b72f698fdd19549f0f0fb45cf08
+      - uses: actions/upload-artifact@330a01c490aca151604b8cf639adc76d48f6c5d4
         with:
           name: template-flutter-uwp-msix
           path: '**/*.appx'
