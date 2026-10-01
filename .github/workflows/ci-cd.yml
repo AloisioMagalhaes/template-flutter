@@ -93,3 +93,26 @@ jobs:
           name: template-flutter-windows-msix
           path: build/msix/template-flutter.msix
           if-no-files-found: error
+  uwp-package:
+    if: github.event_name == 'push' && github.ref == 'refs/heads/main'
+    needs: test
+    runs-on: windows-2025
+    permissions:
+      contents: read
+    steps:
+      - uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683
+      - name: Build UWP shell
+        shell: pwsh
+        run: |
+          $m = Get-Command msbuild -ErrorAction Stop
+          & $m.Source platforms\uwp-shell\UwpShell.csproj /t:Restore,Build /p:Configuration=Release /p:Platform=x64 /p:AppxPackageSigningEnabled=false /p:AppxBundle=Never
+      - name: Validate UWP package
+        shell: pwsh
+        run: |
+          $a = Get-ChildItem -Recurse -Filter *.appx | Select-Object -First 1
+          if (-not $a -or $a.Length -eq 0) { throw 'UWP MSIX inválido' }
+      - uses: actions/upload-artifact@65c4c4a1ddee5b72f698fdd19549f0f0fb45cf08
+        with:
+          name: template-flutter-uwp-msix
+          path: '**/*.appx'
+          if-no-files-found: error
