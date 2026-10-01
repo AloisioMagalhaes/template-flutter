@@ -12,8 +12,9 @@
     <MinimumVisualStudioVersion>16.0</MinimumVisualStudioVersion>
     <EnableDefaultApplicationDefinition>False</EnableDefaultApplicationDefinition>
     <EnableDefaultPageItems>False</EnableDefaultPageItems>
+    <OutputPath>bin\$(Platform)\$(Configuration)\</OutputPath>
+    <AppxPackageDir>$(OutputPath)Appx\</AppxPackageDir>
   </PropertyGroup>
-  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Import Project="$(MSBuildExtensionsPath)\Microsoft\WindowsXaml\v$(VisualStudioVersion)\Microsoft.Windows.UI.Xaml.CSharp.targets" />
   <ItemGroup>
     <ApplicationDefinition Include="App.xaml"><Generator>MSBuild:Compile</Generator><SubType>Designer</SubType></ApplicationDefinition>
